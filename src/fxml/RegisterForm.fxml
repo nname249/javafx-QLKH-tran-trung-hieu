@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="419.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.RegisterController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="363.20001220703125" minWidth="10.0" prefWidth="153.4" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="565.4" minWidth="10.0" prefWidth="565.4" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label text="FORM ĐĂNG KÝ KHÓA HỌC" textFill="#310fb9" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label text="Khóa học đăng ký" GridPane.rowIndex="4" />
+      <Label layoutX="10.0" layoutY="65.0" text="Email" GridPane.rowIndex="1" />
+      <Label layoutX="10.0" layoutY="107.0" text="Họ tên" GridPane.rowIndex="2" />
+      <Label layoutX="10.0" layoutY="148.0" text="Giới tính" GridPane.rowIndex="3" />
+      <TextField fx:id="emailTf" promptText="Nhập email" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <TextField fx:id="fullnameTf" layoutX="232.0" layoutY="61.0" promptText="Nhập họ tên" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <children>
+            <RadioButton mnemonicParsing="false" selected="true" text="Nam">
+               <toggleGroup>
+                  <ToggleGroup fx:id="genderGroup" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton mnemonicParsing="false" text="Nữ" toggleGroup="$genderGroup" />
+            <Label text="Ngày sinh">
+               <HBox.margin>
+                  <Insets left="100.0" />
+               </HBox.margin>
+            </Label>
+            <DatePicker fx:id="birthdayPicker" prefHeight="26.0" prefWidth="165.0" promptText="Chọn ngày sinh" />
+         </children>
+      </HBox>
+      <ChoiceBox fx:id="courseChoicebox" prefHeight="26.0" prefWidth="534.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Button mnemonicParsing="false" onAction="#onClickRegisterBtn" prefHeight="41.0" prefWidth="118.0" text="Đăng ký" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="7" />
+      <Label layoutX="20.0" layoutY="176.0" text="Mật khẩu đăng nhập" GridPane.rowIndex="5" />
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <children>
+            <StackPane prefHeight="37.0" prefWidth="364.0">
+               <children>
+                  <TextField fx:id="passwordTf" />
+                  <PasswordField fx:id="passwordPf" />
+               </children>
+            </StackPane>
+            <CheckBox fx:id="displayCheckbox" mnemonicParsing="false" onAction="#onClickDisplayCheckbox" text="Hiển thị" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+         <children>
+            <Label fx:id="messageLabel" />
+            <Hyperlink fx:id="toHomeLink" onAction="#onClickToHomeLink" text="Chuyển tới màn hình chính" visible="false" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="30.0" />
+   </padding>
+</GridPane>

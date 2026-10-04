@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="638.0" prefWidth="923.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomeController">
+   <top>
+      <GridPane prefHeight="70.0" prefWidth="907.0" style="-fx-background-color: yellow;" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="ỨNG DỤNG QUẢN LÝ THÀNH VIÊN CLB TIN HỌC" textFill="#4e10c1" GridPane.columnSpan="3" GridPane.halignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="3">
+               <children>
+                  <Label fx:id="welcomeLabel" text="Xin chào VIP" />
+                  <Hyperlink onAction="#onClickLogout" text="Đăng xuất" />
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </GridPane>
+   </top>
+   <right>
+      <VBox prefHeight="490.0" prefWidth="251.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="20.0" layoutY="20.0" text="Thông tin chi tiết">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label text="Email" />
+            <TextField fx:id="emailTf" />
+            <Label layoutX="10.0" layoutY="10.0" text="Họ tên" />
+            <TextField fx:id="fullnameTf" layoutX="10.0" layoutY="28.0" />
+            <Label layoutX="10.0" layoutY="53.0" text="Giới tính" />
+            <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="231.0" spacing="30.0">
+               <children>
+                  <RadioButton fx:id="maleRadioButton" mnemonicParsing="false" text="Nam">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="genderGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="femaleRadioButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Nữ" toggleGroup="$genderGroup" />
+               </children>
+            </HBox>
+            <Label text="Ngày sinh" />
+            <DatePicker fx:id="birthdayPicker" prefHeight="26.0" prefWidth="250.0" />
+            <Label layoutX="10.0" layoutY="96.0" text="Khóa học đăng ký" />
+            <ChoiceBox fx:id="courseChoicebox" prefHeight="26.0" prefWidth="251.0" />
+            <Label layoutX="10.0" layoutY="153.0" text="Mật khẩu đăng nhập" />
+            <StackPane fx:id="passwordStackPane" disable="true" prefHeight="33.0" prefWidth="230.0">
+               <children>
+                  <TextField fx:id="passwordTf" />
+                  <PasswordField fx:id="passwordPf" prefHeight="15.0" prefWidth="230.0" />
+               </children>
+            </StackPane>
+            <HBox alignment="CENTER_RIGHT" prefHeight="22.0" prefWidth="230.0">
+               <children>
+                  <CheckBox fx:id="displayCheckbox" disable="true" mnemonicParsing="false" onAction="#onClickDisplayCheckbox" text="Hiển thị mật khẩu" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="34.0" prefWidth="230.0" spacing="10.0">
+               <children>
+                  <Button fx:id="addBtn" disable="true" mnemonicParsing="false" onAction="#onClickAddBtn" text="Thêm" />
+                  <Button fx:id="updateBtn" disable="true" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onClickUpdateBtn" text="Cập nhật" />
+                  <Button fx:id="deleteBtn" disable="true" layoutX="56.0" layoutY="10.0" mnemonicParsing="false" onAction="#onClickDeleteBtn" text="Xóa" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </right>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="43.0" prefWidth="891.0" style="-fx-background-color: blue;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Design by hieutrantrung001100.blogspot.com" textFill="#d7d721">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <VBox spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Danh sách đăng ký">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TableView fx:id="userListTableView" onMouseClicked="#onClickRow" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="idCol" prefWidth="71.99996793270111" text="UserID" />
+                <TableColumn fx:id="emailCol" prefWidth="184.00003814697266" text="Email" />
+                  <TableColumn fx:id="fullnameCol" prefWidth="176.79998779296875" text="Họ tên" />
+                  <TableColumn fx:id="courseCol" prefWidth="169.60000610351562" text="Khóa học đăng ký" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>
